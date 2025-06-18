@@ -11,6 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
+                echo "Check if trigger works, haha"
             }
         }
         stage('Test') {
