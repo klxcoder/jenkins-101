@@ -11,7 +11,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                echo "Check if trigger works, haha"
+                sh '''
+                cd src
+                cat index.js
+                '''
             }
         }
         stage('Test') {
