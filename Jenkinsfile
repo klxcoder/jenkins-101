@@ -1,9 +1,10 @@
 pipeline {
     agent { 
-        node {
-            label 'docker-agent-alpine'
-            }
-      }
+        docker {
+            image 'alpine/git' // or your image
+            args '-v /home/klx/jenkins-101:/repo'
+        }
+    }
     triggers {
         pollSCM '* * * * *'
     }
@@ -11,6 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
+                echo "Try to trigger Jenkins build from local repo"
                 sh '''
                 cd src
                 cat index.js
