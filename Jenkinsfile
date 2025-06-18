@@ -1,8 +1,7 @@
 pipeline {
     agent { 
-        docker {
-            image 'alpine/git' // or your image
-            args '-v /home/klx/jenkins-101:/repo'
+        node {
+            label 'docker-agent-alpine'
         }
     }
     triggers {
