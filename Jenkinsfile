@@ -5,13 +5,13 @@ pipeline {
         }
     }
     triggers {
-        pollSCM '* * * * *'
+        pollSCM 'H * * * *'
     }
     stages {
         stage('Build') {
             steps {
                 echo "Building.."
-                echo "Try to trigger Jenkins build from local repo"
+                echo "Try to change triggers to explore if Jenkins read it"
                 sh '''
                 cd src
                 cat index.js
